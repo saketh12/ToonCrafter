@@ -52,14 +52,16 @@ def load_model_checkpoint(model, ckpt):
     return model
 
 def load_prompts(prompt_file):
-    f = open(prompt_file, 'r')
-    prompt_list = []
-    for idx, line in enumerate(f.readlines()):
-        l = line.strip()
-        if len(l) != 0:
-            prompt_list.append(l)
-        f.close()
+    prompt_list = ['an anime scene']
     return prompt_list
+    # f = open(prompt_file, 'r')
+    # prompt_list = []
+    # for idx, line in enumerate(f.readlines()):
+    #     l = line.strip()
+    #     if len(l) != 0:
+    #         prompt_list.append(l)
+    #     f.close()
+    # return prompt_list
 
 def load_data_prompts(data_dir, video_size=(256,256), video_frames=16, interp=False):
     transform = transforms.Compose([
